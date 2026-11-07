@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Obsidian Tabacaria — Protótipo</title>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div id="site">
+<header><div class="bar">
+<button class="logo" data-go="top" aria-label="Obsidian Tabacaria, voltar ao início"><i>◼</i> Obsidian</button>
+<form class="srch" role="search"><label class="sr" for="q">Pesquisar produtos</label><input id="q" type="search" placeholder="Pesquisar por nome ou categoria" autocomplete="off"><label class="sr" for="cat">Categoria</label><select id="cat"></select></form>
+<nav aria-label="Principal"><button data-go="top">Início</button><button data-go="promo">Ofertas</button><button data-go="cart">Carrinho <span id="cn" class="cnt">0</span></button><button data-go="contato">Contato</button></nav>
+</div></header>
+<main>
+<section class="hero2" id="top"><img class="hbg" src="assets/img/hero.webp" alt="Duas pessoas vestidas de preto encostadas em uma parede urbana ao entardecer"><div class="h2w"><div class="hl">
+<span class="pill">Nova coleção</span>
+<h1>Acessórios premium<br>para o seu<br><span>próprio estilo.</span></h1>
+<p>Isqueiros, cinzeiros, trituradores e kits em preto fosco com detalhes em laranja. Monte o carrinho e finalize direto com a loja pelo WhatsApp.</p>
+<div class="row"><button class="btn" data-go="s1">Explorar produtos</button><button class="btn g" data-go="promo">Ver ofertas</button></div>
+<div class="trust"><span>Materiais selecionados</span><span>Pedido pelo WhatsApp</span><span>Atendimento humano</span><span>Venda para maiores de 18</span></div></div>
+</div></section>
+<section class="sec" id="estilo"><div class="est"><div><h2>Escolha seu estilo</h2><div class="cc">
+<button class="cg" data-cs="Isqueiros"><img data-i="p1" alt="Isqueiro preto fosco com detalhe laranja"><span><b>Isqueiros</b><small>Metal fosco e acabamento resistente.</small><u>Ver coleção</u></span></button>
+<button class="cg" data-cs="Trituradores"><img data-i="p3" alt="Triturador de alumínio grafite"><span><b>Trituradores</b><small>Alumínio com relevo geométrico.</small><u>Ver coleção</u></span></button>
+<button class="cg" data-cs="Estojos"><img data-i="p4" alt="Estojo preto com zíper laranja"><span><b>Estojos</b><small>Para levar tudo com praticidade.</small><u>Ver coleção</u></span></button>
+</div></div><div><h2>Feito para durar</h2><ul class="ft"><li><b>Acabamento fosco</b><small>Resiste às marcas do dia a dia.</small></li><li><b>Detalhes em laranja</b><small>Identidade forte em cada peça.</small></li><li><b>Peças compactas</b><small>Fáceis de levar na bolsa ou no bolso.</small></li><li><b>Atendimento humano</b><small>Seu pedido é confirmado pela loja no WhatsApp.</small></li></ul></div></div></section>
+<div id="empty" class="sec" hidden></div>
+<section class="sec" id="s1"><h2>Em destaque</h2><p class="sub">As peças que mais chamam atenção nesta semana.</p><div class="rw"><button class="ar l" data-sl="g1:-1" aria-label="Rolar para a esquerda">‹</button><div class="rail" id="g1" tabindex="0" role="region" aria-label="Produtos em destaque"></div><button class="ar r" data-sl="g1:1" aria-label="Rolar para a direita">›</button></div></section>
+<section class="sec" id="s2"><h2>Mais procurados</h2><p class="sub">Para completar o seu kit: estojos, bolsas e piteiras.</p><div class="rw"><button class="ar l" data-sl="g2:-1" aria-label="Rolar para a esquerda">‹</button><div class="rail" id="g2" tabindex="0" role="region" aria-label="Produtos mais procurados"></div><button class="ar r" data-sl="g2:1" aria-label="Rolar para a direita">›</button></div></section>
+<section class="sec" id="promo" hidden></section>
+<section class="sec" id="contato"></section>
+</main>
+<footer><p>Protótipo com produtos e dados fictícios. O pedido é enviado ao WhatsApp para atendimento humano e só vale após a confirmação da loja; nenhum pagamento é processado aqui. Venda sujeita à verificação de idade (18+) conforme a legislação local.</p><p><a href="#admin">Área administrativa</a></p></footer>
+</div>
+<div id="adm" hidden></div>
+
+<dialog id="age"><div class="dw"><h2>Você tem 18 anos ou mais?</h2><p class="note" style="font-size:15px">Este catálogo reúne acessórios de tabacaria e é destinado a maiores de 18 anos. Esta confirmação não substitui as obrigações legais da loja, como a checagem de idade na entrega ou retirada.</p><div class="row"><button class="btn" id="ay">Tenho 18 anos ou mais</button><a class="btn g" href="https://www.google.com.br" target="_blank" rel="noopener">Sair</a></div></div></dialog>
+
+<dialog id="cart" aria-label="Carrinho"><div class="dw">
+<div class="row" style="justify-content:space-between"><h2>Seu carrinho</h2><button class="btn g" id="cx">Fechar</button></div>
+<ul id="cl"></ul>
+<div id="ck" hidden>
+<label for="cp">Cupom de desconto</label><div class="cpr"><input id="cp" autocomplete="off" placeholder="Digite a palavra-passe"><button type="button" class="btn g" id="cpb">Aplicar</button></div><p id="cpi" class="note" aria-live="polite"></p>
+<div class="tot"><span>Subtotal do pedido</span><span id="sb"></span></div>
+<div class="tot" id="dsr" hidden><span>Desconto</span><span id="dv"></span></div>
+<div class="tot"><span>Total estimado</span><b id="tt"></b></div>
+<label for="nm">Seu nome *</label><input id="nm" autocomplete="name">
+<label for="ob">Observações</label><textarea id="ob" rows="2"></textarea>
+<label for="ad">Endereço ou entrega (opcional)</label><input id="ad" autocomplete="street-address">
+<details style="margin-top:12px"><summary>Ver mensagem que será enviada</summary><pre id="pre"></pre></details>
+<p id="ce" class="err" role="alert"></p>
+<a id="wa" class="btn" style="display:block" href="#" target="_blank" rel="noopener">Finalizar pelo WhatsApp</a>
+<p class="note">O pedido só é confirmado após o atendimento da loja. Não há pagamento online.</p>
+</div></div></dialog>
+
+<dialog id="cf"><div class="dw"><p id="cft"></p><div class="row"><button class="btn g" id="cfn">Cancelar</button><button class="btn" id="cfy">Excluir</button></div></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/app.js"></script></body></html>
